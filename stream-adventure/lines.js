@@ -1,4 +1,4 @@
- var split = require('split');
+var split = require('split');
 process.stdin
   .pipe(split())
   .pipe(through(function (line) {
