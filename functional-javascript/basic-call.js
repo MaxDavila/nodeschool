@@ -1,11 +1,10 @@
-function duckCount(args){
-	console.log(args);
-	var object = Object.create(null)
-  object.quack = function() {
-  console.log('quack')
-}
-	Object.getPrototypeOf(object) === Object.prototype
-	object.hasOwnProperty('quack') 
+function duckCount(){
+	var count = 0;
+	for (var i = 0; i < arguments.length ; i++) {
+		if (Object.prototype.hasOwnProperty.call(arguments[i], 'quack') === true) 
+			count = count + 1;
+	}
+	return count;
 }
 
 module.exports = duckCount;
