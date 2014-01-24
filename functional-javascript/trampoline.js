@@ -11,3 +11,4 @@ function trampoline(fn) {
 module.exports = function(operation, num) {
 	return repeat(operation, num);
 }
+
