@@ -1,5 +1,5 @@
 var myFunction(){
-	console.lgo('calledm my function')
+	console.log('called my function')
 }
 
 Function.prototype.call.call(myFunction)
