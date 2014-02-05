@@ -1,9 +1,12 @@
 function loadUsers(userIds, load, done) {
-	var users = [];
-	for (var i = 0; i < userIds.length; i++) {
-		users.push(load(userIds[i]));
-	}
-	return users
+	var users = []
+	var count = 0
+	userIds.forEach(function(el, idx){
+		load(el, function(user){
+			users[idx] = user
+			if (++count === userIds.length) return done(users);
+		});
+	});
 }
 
-module.exports = loadUsersrecu
+module.exports = loadUsers
